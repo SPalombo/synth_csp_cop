@@ -1,0 +1,43 @@
+data_split:
+  train: 0.8
+  val: 0.1
+  test: 0.1
+problem_generator:
+  js_csp_satisfiable:
+    class: JobShopProblemCSPGenerator
+    num_samples: 3000
+    kwargs:
+      min_num_jobs: 2
+      max_num_jobs: 4
+      min_num_machines: 2
+      max_num_machines: 4
+      min_tasks_per_job: 2
+      max_tasks_per_job: 4
+      min_task_time: 1
+      max_task_time: 15
+      satisfiable_makespan: true
+  js_csp_unsatisfiable:
+    class: JobShopProblemCSPGenerator
+    num_samples: 1000
+    kwargs:
+      min_num_jobs: 2
+      max_num_jobs: 4
+      min_num_machines: 2
+      max_num_machines: 4
+      min_tasks_per_job: 2
+      max_tasks_per_job: 4
+      min_task_time: 1
+      max_task_time: 15
+      satisfiable_makespan: false
+  js_cop:
+    class: JobShopProblemCOPGenerator
+    num_samples: 4000
+    kwargs:
+      min_num_jobs: 2
+      max_num_jobs: 4
+      min_num_machines: 2
+      max_num_machines: 4
+      min_tasks_per_job: 2
+      max_tasks_per_job: 4
+      min_task_time: 1
+      max_task_time: 15
